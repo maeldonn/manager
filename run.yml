@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  become: yes
+
+  pre_tasks:
+    - name: Update dnf
+      dnf:
+        update_cache: true
+        state: latest
+
+  tasks:
+    - import_tasks: tasks/devtools/tools.yml
+    - import_tasks: tasks/devtools/go.yml
+    - import_tasks: tasks/devtools/node.yml
+    - import_tasks: tasks/devtools/rust.yml
+    - import_tasks: tasks/devtools/java.yml
+    - import_tasks: tasks/devtools/docker.yml
+    - import_tasks: tasks/tools/tools.yml
+    - import_tasks: tasks/tools/softwares.yml
+    - import_tasks: tasks/tools/lf.yml
+    - import_tasks: tasks/tools/pfetch.yml
