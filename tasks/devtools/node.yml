@@ -1,0 +1,12 @@
+---
+- name: Install nvm
+  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+- name: Install node LTS
+  shell: /bin/bash -c "source ~/.nvm/nvm.sh && nvm install --lts"
+
+- name: Use node LTS
+  shell: /bin/bash -c "source ~/.nvm/nvm.sh && nvm use --lts"
+
+- name: Install typescript
+  shell: /bin/bash -c "source ~/.nvm/nvm.sh && npm install -g typescript"

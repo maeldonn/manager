@@ -1,0 +1,8 @@
+---
+- name: Install Golang
+  dnf:
+    name:
+      - golang
+
+- name: Install godoc
+  shell: go install golang.org/x/tools/cmd/godoc@latest

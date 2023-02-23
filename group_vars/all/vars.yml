@@ -1,0 +1,9 @@
+---
+username: mdonnart
+
+devtools:
+  - exa
+  - htop
+  - neofetch
+  - stow
+  - bat
