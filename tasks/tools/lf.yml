@@ -1,0 +1,8 @@
+---
+- name: Ensure go is installed
+  dnf:
+    name: go
+    state: present
+
+- name: Install lf
+  shell: env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest

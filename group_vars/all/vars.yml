@@ -1,9 +1,25 @@
 ---
 username: mdonnart
 
+packages:
+  - neovim
+  - tmux
+  - fd-find
+  - ripgrep
+  - fzf
+  - lazygit
+
 devtools:
   - exa
   - htop
   - neofetch
   - stow
   - bat
+
+softwares:
+  - firefox
+  - obsidian
+  - insomnia
+  - dbeaver
+  - alacritty
+  - spotify
