@@ -1,0 +1,24 @@
+---
+- name: Install zsh
+  dnf:
+    name:
+      - zsh
+      - util-linux-user
+    state: latest
+
+- name: Change shell
+  shell: chsh -s `which zsh`
+
+- name: Download antigen file
+  shell: curl -L git.io/antigen > antigen.zsh
+  args:
+    chdir: /home/"{{ username }}"
+    creates: antigen.zsh
+
+- name: Execute antigen file
+  shell: zsh /home/"{{ username }}"/antigen.zsh
+
+- name: Move antigen file
+  shell: mv antigen.zsh .antigen/antigen.zsh
+  args:
+    chdir: /home/"{{ username }}"

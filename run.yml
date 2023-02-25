@@ -9,6 +9,8 @@
         state: latest
 
   tasks:
+    - import_tasks: tasks/core/repositories.yml
+    - import_tasks: tasks/core/zsh.yml
     - import_tasks: tasks/devtools/tools.yml
     - import_tasks: tasks/devtools/go.yml
     - import_tasks: tasks/devtools/node.yml
