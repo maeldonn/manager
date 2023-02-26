@@ -1,5 +1,10 @@
 ---
-- name: Install softwares
+- name: Install fedora softwares
   dnf:
     name: "{{ softwares }}"
     state: latest
+
+- name: Install flatpak softwares
+  flatpak:
+    name: "{{ flatpakApps }}"
+    state: present

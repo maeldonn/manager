@@ -18,8 +18,10 @@ devtools:
 
 softwares:
   - firefox
-  - obsidian
-  - insomnia
-  - dbeaver
   - alacritty
-  - spotify
+
+flatpakApps:
+  - com.spotify.Client
+  - io.dbeaver.DBeaverCommunity
+  - md.obsidian.Obsidian
+  - rest.insomnia.Insomnia
