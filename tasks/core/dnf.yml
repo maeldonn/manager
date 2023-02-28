@@ -6,7 +6,6 @@
     search_string: "max_parallel_downloads"
     line: "max_parallel_downloads=10"
     insertafter: "EOF"
-  tags: dev
 
 - name: Add fastestmirror=True if not present
   lineinfile:
@@ -15,7 +14,6 @@
     search_string: "fastestmirror"
     line: "fastestmirror=True"
     insertafter: "EOF"
-  tags: dev
 
 - name: Add countme=False if not present
   lineinfile:
@@ -24,7 +22,6 @@
     search_string: "countme"
     line: "countme=False"
     insertafter: "EOF"
-  tags: dev
 
 - name: Add defaultyes=True if not present
   lineinfile:
@@ -33,4 +30,3 @@
     search_string: "defaultyes"
     line: "defaultyes=True"
     insertafter: "EOF"
-  tags: dev
