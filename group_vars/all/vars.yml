@@ -25,3 +25,7 @@ flatpakApps:
   - io.dbeaver.DBeaverCommunity
   - md.obsidian.Obsidian
   - rest.insomnia.Insomnia
+
+fonts:
+  - https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetbrainsMono.zip
+  - https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/DejaVuSansMono.zip

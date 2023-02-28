@@ -1,0 +1,30 @@
+---
+- name: Creates font directory
+  file:
+    path: /home/"{{ username }}"/.fonts
+    state: directory
+
+- name: Download fonts
+  get_url:
+    url: "{{ item }}"
+    dest: /home/"{{ username }}"/.fonts
+  loop: "{{ fonts }}"
+
+- name: Find archive files
+  find:
+    paths: /home/"{{ username }}"/.fonts
+    use_regex: true
+    patterns: ['.*\.zip$']
+  register: archives
+
+- name: Extract fonts
+  unarchive:
+    src: "{{ item.path }}"
+    dest: /home/"{{ username }}"/.fonts
+  loop: "{{ archives.files }}"
+
+- name: Remove fonts archive files
+  file:
+    path: "{{ item.path }}"
+    state: absent
+  loop: "{{ archives.files }}"

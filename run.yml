@@ -15,6 +15,7 @@
     - import_tasks: tasks/core/firmware.yml
     - import_tasks: tasks/core/hostname.yml
     - import_tasks: tasks/core/grub.yml
+    - import_tasks: tasks/core/fonts.yml
     - import_tasks: tasks/devtools/tools.yml
     - import_tasks: tasks/devtools/go.yml
     - import_tasks: tasks/devtools/node.yml
