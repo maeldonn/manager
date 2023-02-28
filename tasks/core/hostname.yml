@@ -1,0 +1,4 @@
+---
+- name: Set hostname to slimbook
+  hostname:
+    name: slimbook

@@ -1,0 +1,11 @@
+---
+- name: Refresh fwupdmgr database
+  shell: fwupdmgr refresh
+
+- name: Search for updates
+  shell: fwupdmgr get-updates
+  register: update
+
+- name: Update
+  shell: fwupdmgr update
+  when: update.rc == 0
