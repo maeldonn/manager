@@ -1,0 +1,19 @@
+---
+- name: Install stow
+  dnf:
+    name: stow
+    state: present
+
+- name: Clone dotfiles
+  git:
+    repo: 'git@github.com:maeldonn/dotfiles.git'
+    dest: /home/"{{ username }}"/.dotfiles
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: main
+
+- name: Deploy dotfiles
+  make:
+    chdir: /home/"{{ username }}"/.dotfiles
+    target: all

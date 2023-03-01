@@ -13,7 +13,6 @@ devtools:
   - exa
   - htop
   - neofetch
-  - stow
   - bat
 
 softwares:
