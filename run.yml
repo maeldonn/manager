@@ -9,6 +9,7 @@
         state: latest
 
   tasks:
+    - import_tasks: tasks/core/ssh.yml
     - import_tasks: tasks/core/repositories.yml
     - import_tasks: tasks/core/zsh.yml
     - import_tasks: tasks/core/dnf.yml
