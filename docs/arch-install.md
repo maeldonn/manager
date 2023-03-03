@@ -223,6 +223,14 @@ firefox ffmpeg openssh stow fd ripgrep bat brightnessctl fzf \
 obsidian gnome-boxes wl-clipboard blueman
 ```
 
+### Customize pacman
+
+```bash
+nvim /etc/pacman.conf
+```
+
+Add `ILoveCandy` in options under `Color`
+
 ### Setup an AUR wrapper
 
 install yay
