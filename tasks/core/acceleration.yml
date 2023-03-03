@@ -1,0 +1,6 @@
+---
+- name: Replace Mesa VAAPI drivers
+  shell: dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld
+
+- name: Replace Mesa VDPAU drivers
+  shell: dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld

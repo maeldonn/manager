@@ -2,6 +2,7 @@
 - hosts: localhost
   become: yes
 
+  # TODO: Ajouter les tags pour le faire que sur une install complete (install, core)
   pre_tasks:
     - name: Update dnf
       dnf:
@@ -12,6 +13,7 @@
     - import_tasks: tasks/core/ssh.yml
     - import_tasks: tasks/core/repositories.yml
     - import_tasks: tasks/core/codecs.yml
+    - import_tasks: tasks/core/acceleration.yml
     - import_tasks: tasks/core/dotfiles.yml
     - import_tasks: tasks/core/zsh.yml
     - import_tasks: tasks/core/dnf.yml
@@ -19,12 +21,14 @@
     - import_tasks: tasks/core/hostname.yml
     - import_tasks: tasks/core/grub.yml
     - import_tasks: tasks/core/fonts.yml
+
     - import_tasks: tasks/devtools/tools.yml
     - import_tasks: tasks/devtools/go.yml
     - import_tasks: tasks/devtools/node.yml
     - import_tasks: tasks/devtools/rust.yml
     - import_tasks: tasks/devtools/java.yml
     - import_tasks: tasks/devtools/docker.yml
+
     - import_tasks: tasks/tools/tools.yml
     - import_tasks: tasks/tools/softwares.yml
     - import_tasks: tasks/tools/lf.yml
