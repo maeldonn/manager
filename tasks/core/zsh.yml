@@ -12,13 +12,13 @@
 - name: Download antigen file
   shell: curl -L git.io/antigen > antigen.zsh
   args:
-    chdir: /home/"{{ username }}"
+    chdir: "{{ ansible_env.HOME }}"
     creates: antigen.zsh
 
 - name: Execute antigen file
-  shell: zsh /home/"{{ username }}"/antigen.zsh
+  shell: "zsh {{ ansible_env.HOME }}/antigen.zsh"
 
 - name: Move antigen file
   shell: mv antigen.zsh .antigen/antigen.zsh
   args:
-    chdir: /home/"{{ username }}"
+    chdir: "{{ ansible_env.HOME }}"

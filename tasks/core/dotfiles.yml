@@ -6,8 +6,8 @@
 
 - name: Clone dotfiles
   git:
-    repo: 'git@github.com:maeldonn/dotfiles.git'
-    dest: /home/"{{ username }}"/.dotfiles
+    repo: "git@github.com:maeldonn/dotfiles.git"
+    dest: "{{ ansible_env.HOME }}/.dotfiles"
     recursive: yes
     update: yes
     accept_hostkey: yes
@@ -15,5 +15,5 @@
 
 - name: Deploy dotfiles
   make:
-    chdir: /home/"{{ username }}"/.dotfiles
+    chdir: "{{ ansible_env.HOME }}/.dotfiles"
     target: all

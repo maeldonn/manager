@@ -1,18 +1,18 @@
 ---
 - name: Creates font directory
   file:
-    path: /home/"{{ username }}"/.fonts
+    path: "{{ ansible_env.HOME }}/.fonts"
     state: directory
 
 - name: Download fonts
   get_url:
     url: "{{ item }}"
-    dest: /home/"{{ username }}"/.fonts
+    dest: "{{ ansible_env.HOME }}/.fonts"
   loop: "{{ fonts }}"
 
 - name: Find archive files
   find:
-    paths: /home/"{{ username }}"/.fonts
+    paths: "{{ ansible_env.HOME }}/.fonts"
     use_regex: true
     patterns: ['.*\.zip$']
   register: archives
@@ -20,7 +20,7 @@
 - name: Extract fonts
   unarchive:
     src: "{{ item.path }}"
-    dest: /home/"{{ username }}"/.fonts
+    dest: "{{ ansible_env.HOME }}/.fonts"
   loop: "{{ archives.files }}"
 
 - name: Remove fonts archive files

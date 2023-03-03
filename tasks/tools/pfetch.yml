@@ -1,15 +1,15 @@
 ---
 - name: Clone pfetch git repository
   git:
-    repo: 'https://github.com/dylanaraps/pfetch'
-    dest: /home/"{{ username }}"/pfetch
+    repo: "https://github.com/dylanaraps/pfetch"
+    dest: "{{ ansible_env.HOME }}/pfetch"
 
 - name: Install pfetch
   make:
-    chdir: /home/"{{ username }}"/pfetch
+    chdir: "{{ ansible_env.HOME }}/pfetch"
     target: install
 
 - name: Delete pfetch git repository
   file:
-    path: /home/"{{ username }}"/pfetch
+    path: "{{ ansible_env.HOME }}/pfetch"
     state: absent
