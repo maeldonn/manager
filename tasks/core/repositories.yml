@@ -10,3 +10,27 @@
     name: flathub
     state: present
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+
+- name: Add RPM Fusion repositories
+  dnf:
+    name:
+      - 'https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ansible_distribution_major_version}}.noarch.rpm'
+      - 'https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ansible_distribution_major_version}}.noarch.rpm'
+    state: present
+    disable_gpg_check: true
+
+- name: Update dnf
+  dnf:
+    state: latest
+
+- name: Install appstream-data for gnome softwares
+  dnf:
+    name:
+      - rpmfusion-free-appstream-data
+      - rpmfusion-nonfree-appstream-data
+
+- name: Enable the tainted repository
+  dnf:
+    name:
+      - rpmfusion-free-release-tainted
+      - rpmfusion-nonfree-release-tainted
