@@ -1,7 +1,7 @@
 ---
 - name: Ensure .ssh directory exists.
   file:
-    dest: "{{ ansible_env.HOME }}/.ssh/id_ed25519"
+    dest: "{{ ansible_env.HOME }}/.ssh"
     mode: 0700
     state: directory
 
