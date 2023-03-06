@@ -17,7 +17,6 @@
     - import_tasks: tasks/core/dotfiles.yml
     - import_tasks: tasks/core/zsh.yml
     - import_tasks: tasks/core/dnf.yml
-    - import_tasks: tasks/core/firmware.yml
     - import_tasks: tasks/core/hostname.yml
     - import_tasks: tasks/core/grub.yml
     - import_tasks: tasks/core/fonts.yml
