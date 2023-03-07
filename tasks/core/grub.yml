@@ -6,8 +6,8 @@
     search_string: "GRUB_TIMEOUT"
     line: "GRUB_TIMEOUT=1"
     insertafter: "EOF"
-    register: grub
+  register: grub
 
 - name: Persist changes
-  shell: grub2-mkconfig -0 /boot/efi/EFI/fedora/grub.cfg
+  shell: grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
   when: grub.changed
