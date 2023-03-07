@@ -4,6 +4,7 @@ packages:
   - tmux
   - fd-find
   - ripgrep
+  - gcc-c++
   - fzf
   - lazygit
 
