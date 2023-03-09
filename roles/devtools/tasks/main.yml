@@ -1,0 +1,7 @@
+---
+- include_tasks: tasks/devtools/tools.yml
+- include_tasks: tasks/devtools/go.yml
+- include_tasks: tasks/devtools/node.yml
+- include_tasks: tasks/devtools/rust.yml
+- include_tasks: tasks/devtools/java.yml
+- include_tasks: tasks/devtools/docker.yml
