@@ -8,3 +8,4 @@
   flatpak:
     name: "{{ flatpakApps }}"
     state: present
+  become_user: "{{ username }}"

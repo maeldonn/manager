@@ -6,3 +6,4 @@
 
 - name: Install godoc
   shell: go install golang.org/x/tools/cmd/godoc@latest
+  become_user: "{{ username }}"
