@@ -2,7 +2,6 @@
 - hosts: localhost
   become: yes
 
-  # TODO: Ajouter les tags pour le faire que sur une install complete (install, core)
   pre_tasks:
     - name: Update dnf
       dnf:
