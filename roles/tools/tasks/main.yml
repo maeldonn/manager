@@ -1,5 +1,5 @@
 ---
-- include_tasks: tasks/tools/tools.yml
-- include_tasks: tasks/tools/softwares.yml
-- include_tasks: tasks/tools/lf.yml
-- include_tasks: tasks/tools/pfetch.yml
+- include_tasks: tools.yml
+- include_tasks: softwares.yml
+- include_tasks: lf.yml
+- include_tasks: pfetch.yml
