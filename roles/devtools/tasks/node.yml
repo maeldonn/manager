@@ -1,12 +1,16 @@
 ---
 - name: Install nvm
   shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  become_user: "{{ username }}"
 
 - name: Install node LTS
   shell: /bin/bash -c "source ~/.nvm/nvm.sh && nvm install --lts"
+  become_user: "{{ username }}"
 
 - name: Use node LTS
   shell: /bin/bash -c "source ~/.nvm/nvm.sh && nvm use --lts"
+  become_user: "{{ username }}"
 
 - name: Install typescript
   shell: /bin/bash -c "source ~/.nvm/nvm.sh && npm install -g typescript"
+  become_user: "{{ username }}"

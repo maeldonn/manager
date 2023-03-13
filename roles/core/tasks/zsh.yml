@@ -20,11 +20,14 @@
   args:
     chdir: "/home/{{ username }}"
     creates: antigen.zsh
+  become_user: "{{ username }}"
 
 - name: Execute antigen file
   shell: "zsh /home/{{ username }}/antigen.zsh"
+  become_user: "{{ username }}"
 
 - name: Move antigen file
   shell: mv antigen.zsh .antigen/antigen.zsh
   args:
     chdir: "/home/{{ username }}"
+  become_user: "{{ username }}"

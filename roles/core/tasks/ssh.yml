@@ -4,21 +4,25 @@
     dest: "/home/{{ username }}/.ssh"
     mode: 0700
     state: directory
+  become_user: "{{ username }}"
 
 - name: Install ssh key
   copy:
     src: id_ed25519
     dest: "/home/{{ username }}/.ssh/id_ed25519"
     mode: 0600
+  become_user: "{{ username }}"
 
 - name: Install ssh public key
   copy:
     src: id_ed25519.pub
     dest: "/home/{{ username }}/.ssh/id_ed25519.pub"
     mode: 0644
+  become_user: "{{ username }}"
 
 - name: Set authorized key taken from file
   authorized_key:
     user: "{{ username }}"
     state: present
     key: "{{ lookup('file', '/home/{{ username }}/.ssh/id_ed25519.pub') }}"
+  become_user: "{{ username }}"

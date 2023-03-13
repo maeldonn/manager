@@ -1,9 +1,12 @@
 ---
 - name: Install sdk
   shell: curl -s "https://beta.sdkman.io" | bash
+  become_user: "{{ username }}"
 
 - name: Install Java
   shell: /bin/bash -c "source ~/.sdkman/bin/sdkman-init.sh && sdk install java"
+  become_user: "{{ username }}"
 
 - name: Install Maven
   shell: /bin/bash -c "source ~/.sdkman/bin/sdkman-init.sh && sdk install maven"
+  become_user: "{{ username }}"

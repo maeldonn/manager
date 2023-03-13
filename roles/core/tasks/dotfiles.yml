@@ -12,8 +12,10 @@
     update: yes
     accept_hostkey: yes
     version: main
+  become_user: "{{ username }}"
 
 - name: Deploy dotfiles
   make:
     chdir: "/home/{{ username }}/.dotfiles"
     target: all
+  become_user: "{{ username }}"

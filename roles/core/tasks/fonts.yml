@@ -3,12 +3,14 @@
   file:
     path: "/home/{{ username }}/.fonts"
     state: directory
+  become_user: "{{ username }}"
 
 - name: Download fonts
   get_url:
     url: "{{ item }}"
     dest: "/home/{{ username }}/.fonts"
   loop: "{{ fonts }}"
+  become_user: "{{ username }}"
 
 - name: Find archive files
   find:
@@ -16,15 +18,18 @@
     use_regex: true
     patterns: ['.*\.zip$']
   register: archives
+  become_user: "{{ username }}"
 
 - name: Extract fonts
   unarchive:
     src: "{{ item.path }}"
     dest: "/home/{{ username }}/.fonts"
   loop: "{{ archives.files }}"
+  become_user: "{{ username }}"
 
 - name: Remove fonts archive files
   file:
     path: "{{ item.path }}"
     state: absent
   loop: "{{ archives.files }}"
+  become_user: "{{ username }}"
